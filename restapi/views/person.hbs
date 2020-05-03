@@ -1,0 +1,31 @@
+
+<div class="container">
+  <h1>CRUD Operations</h1>
+  <h2>{{title}}</h2>
+  <a href="/person/create-form" class="btn btn-success">Create Person</a>
+  <br /><br />
+  <table class="table">
+    <tr>
+      <th>#ID</th>
+      <th>Person Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Mobile</th>
+      <th>Action</th>
+    </tr>
+    {{#each person}}
+      <tr>
+        <td>{{this.id}}</td>
+        <td>{{this.name}}</td>
+        <td>{{this.age}}</td>
+        <td>{{this.gender}}</td>
+        <td>{{this.mobile}}</td>
+        <td>
+            <a href="/person/edit-form/{{this.id}}" class="btn btn-info btn-sm">Edit</a>
+            <a href="/person/delete/{{this.id}}" class="btn btn-danger btn-sm">Delete</a>
+        </td>
+      </tr>
+    {{/each}}
+  </table>
+</div>
+
